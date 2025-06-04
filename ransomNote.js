@@ -41,4 +41,13 @@ var canConstruct = function (ransomNote, magazine) {
   return result.every((check) => check === true);
 };
 
-// canConstruct("a", "b");
+let result;
+
+result = canConstruct("a", "b");
+console.log(result);
+
+result = canConstruct("aa", "ab");
+console.log(result);
+
+result = canConstruct("aa", "aab");
+console.log(result);
