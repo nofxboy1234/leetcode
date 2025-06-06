@@ -60,7 +60,9 @@ var smallestEquivalentStringGraphClean = function (s1, s2, baseStr) {
 
     for (const component of components) {
       // Find lexicographically smallest character in component
-      const representative = Math.min(...component);
+      const representative = component.reduce((min, char) =>
+        char < min ? char : min
+      );
 
       // Map all characters to this representative
       for (const char of component) {
