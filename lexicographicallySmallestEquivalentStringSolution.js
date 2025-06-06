@@ -13,8 +13,8 @@ var smallestEquivalentStringGraphClean = function (s1, s2, baseStr) {
     const graph = new Map();
 
     for (let i = 0; i < s1.length; i++) {
-      const char1 = s1[i],
-        char2 = s2[i];
+      const char1 = s1[i];
+      const char2 = s2[i];
 
       if (!graph.has(char1)) graph.set(char1, []);
       if (!graph.has(char2)) graph.set(char2, []);
