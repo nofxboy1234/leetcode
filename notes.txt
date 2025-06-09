@@ -1,0 +1,108 @@
+Big O Notation - Time/Space Complexity
+  - worst case scenario
+  
+  Fastest to slowest:
+    - O(1): Constant
+      - Accessing an element of an array
+    - O(Log N): Logarithmic
+     - Number of steps increases by 1 as data doubles
+     - Binary Search: Only on sorted arrays
+    - O(N): Linear
+      - Number of steps increases as the number of items increases
+      - Looping over an array
+    - O(N Log N): N x Log N
+      - Merge Sort
+      - Constructing a Cartesian tree
+      - O(Log N) -> O(N)
+    - O(n²): Quadratic
+       - Double-nested loops
+    - O(n³): Cubic
+      - Triple-nested loops
+    - O(2ⁿ): Exponential
+      - n = 1, steps = 2
+      - n = 2, steps = 4
+      - n = 3, steps = 8
+    - O(N!): Factorial
+      - is the product of all numbers between 1 and that number
+      - factorial of 3 = (1 * 2 * 3) = 6
+      - factorial of 10 = (1 * 2 * 3) = 3628800
+      - Permutations
+      - Combinations
+
+- Stack
+  - DFS: depth-first-search
+- Queue
+  - BFS: breadth-first-search
+- Binary Search Tree
+  - Construct from unordered array
+- Singly-Linked Lists
+- Doubly-Linked Lists
+- HashMap
+
+- Linear Search
+- Binary Search
+- Two Crystal Balls problem
+- Bubble Sort
+- Array List (Dynamic Arrays)
+- Maze Solving
+- Ring Buffer
+- Path finding
+- Quick Sort
+  - O(N Log N)
+- Trees
+  - Tree traversal
+    - pre-order
+    - in-order
+    - post-order
+    - BFS traversal
+  - Binary (Search) Tree comparison
+- Min Heap
+- Tries
+- Graphs
+  - Adjacency Matrix
+  - Adjacency List
+  - Dijkstra's Shortest Path
+- Maps
+- LRU Cache (Least Recently Used)
+
+Leetcode:
+1. Understand the Problem:
+- Read Carefully: Pay close attention to the wording, including any specific 
+  constraints, edge cases, and expected behavior.
+- Identify the Goal: What is the problem asking you to achieve? 
+  What is the input and output? 
+- Look for Patterns: Are there any keywords or clues that suggest a specific 
+  algorithm or data structure might be suitable? 
+2. Explore Solution Strategies:
+- Brute Force: Start with a simple, straightforward approach to get a baseline 
+  understanding. This might involve nested loops or iterating through all 
+  possible combinations.
+- Optimization: Consider how to improve the brute-force approach. Can you reduce 
+  the number of iterations? Can you use a more efficient data structure? 
+- Algorithm Choices: Think about algorithms like sorting, searching, 
+  dynamic programming, or graph traversal. 
+3. Consider Time and Space Complexity:
+- Efficiency: Evaluate the time and space complexity of your solution. Is it 
+  feasible for large inputs?
+- Optimization Focus: If your initial solution is slow or uses too much memory, 
+  focus on optimizing it to meet the problem's constraints. 
+4. Implementation and Refinement:
+- Start Coding: Write down your solution, even if it's a simple 
+  brute-force approach.
+- Testing: Run your code with various test cases, including edge cases, to 
+  ensure it's working correctly.
+- Debugging: If you encounter errors, use debugging tools to identify the 
+  problem and fix it.
+- Optimization: Once you have a working solution, try to optimize it for 
+  better performance. 
+Tips for Success:
+- Practice: Regularly solving LeetCode problems is key to improving your 
+  problem-solving skills.
+- Start Easy: Begin with easier problems to build a foundation and 
+  gain confidence.
+- Learn Patterns: Identify common patterns and algorithms, which can help you 
+  solve problems more quickly.
+- Don't Be Afraid to Ask for Help: If you get stuck, seek help from online 
+  resources or communities.
+- Focus on Understanding, Not Just Memorization: Aim to understand 
+  the underlying concepts and algorithms, rather than just memorizing solutions. 
