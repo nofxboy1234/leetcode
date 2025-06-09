@@ -29,16 +29,6 @@ Big O Notation - Time/Space Complexity
       - Permutations
       - Combinations
 
-- Stack
-  - DFS: depth-first-search
-- Queue
-  - BFS: breadth-first-search
-- Binary Search Tree
-  - Construct from unordered array
-- Singly-Linked Lists
-- Doubly-Linked Lists
-- HashMap
-
 - Linear Search
 - Binary Search
 - Two Crystal Balls problem
@@ -65,7 +55,26 @@ Big O Notation - Time/Space Complexity
 - Maps
 - LRU Cache (Least Recently Used)
 
+- Stack
+  - DFS: depth-first-search
+- Queue
+  - BFS: breadth-first-search
+- Binary Search Tree
+  - Construct from unordered array
+- Singly-Linked Lists
+- Doubly-Linked Lists
+- HashMap
+
+
 Leetcode:
+- Prioritize solving problems over theory.
+- Visualize it using pen and paper.
+- Understand, don’t memorize. Sit through a problem until you fully understand why a solution works.
+- Learn the patterns behind problems.
+- For every problem you solve, ask yourself: what is one thing knowing which made everything else easier?
+- Revisit problems which you couldn’t solve in one go.
+- Be consistent with your practice.
+
 1. Understand the Problem:
 - Read Carefully: Pay close attention to the wording, including any specific 
   constraints, edge cases, and expected behavior.
