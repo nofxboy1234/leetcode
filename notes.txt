@@ -11,6 +11,10 @@ Big O Notation - Time/Space Complexity
       - Number of steps increases as the number of items increases
       - Looping over an array
     - O(N Log N): N x Log N
+      - an algorithm which initially is O(log N) such as our example earlier of 
+        Binary Search where it repeatedly breaks an array in half, 
+        but with O(N log N) each of those array halves is processed by another 
+        algorithm with a complexity of O(N)
       - Merge Sort
       - Constructing a Cartesian tree
       - O(Log N) -> O(N)
@@ -35,9 +39,9 @@ Big O Notation - Time/Space Complexity
 - Bubble Sort
 - Array List (Dynamic Arrays)
 - Maze Solving
-- Ring Buffer
 - Path finding
 - Quick Sort
+- Merge Sort
   - O(N Log N)
 - Trees
   - Tree traversal
@@ -54,9 +58,8 @@ Big O Notation - Time/Space Complexity
   - Dijkstra's Shortest Path
 - Maps
 - LRU Cache (Least Recently Used)
-
 - Stack
-  - DFS: depth-first-search
+  - DFS: depth-first-search (recursion / Iterative DFS using Explicit Stack)
 - Queue
   - BFS: breadth-first-search
 - Binary Search Tree
@@ -64,7 +67,8 @@ Big O Notation - Time/Space Complexity
 - Singly-Linked Lists
 - Doubly-Linked Lists
 - HashMap
-
+- Ring Buffer
+- Constructing a Cartesian tree
 
 Leetcode:
 - Prioritize solving problems over theory.
