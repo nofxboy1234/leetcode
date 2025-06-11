@@ -43,6 +43,16 @@ Big O Notation - Time/Space Complexity
 - Quick Sort
 - Merge Sort
   - O(N Log N)
+j- Min Heap
+- Tries
+- Maps
+- LRU Cache (Least Recently Used)
+- Stack
+  - DFS: depth-first-search (recursion / Iterative DFS using Explicit Stack)
+- Queue
+  - BFS: breadth-first-search
+- Singly-Linked Lists
+- Doubly-Linked Lists
 - Trees
   - Tree traversal
     - pre-order
@@ -50,25 +60,16 @@ Big O Notation - Time/Space Complexity
     - post-order
     - BFS traversal
   - Binary (Search) Tree comparison
-- Min Heap
-- Tries
+  - Binary Search Tree
+    - Construct from unordered array
+  - Constructing a Cartesian tree
 - Graphs
   - Adjacency Matrix
   - Adjacency List
   - Dijkstra's Shortest Path
-- Maps
-- LRU Cache (Least Recently Used)
-- Stack
-  - DFS: depth-first-search (recursion / Iterative DFS using Explicit Stack)
-- Queue
-  - BFS: breadth-first-search
-- Binary Search Tree
-  - Construct from unordered array
-- Singly-Linked Lists
-- Doubly-Linked Lists
 - HashMap
 - Ring Buffer
-- Constructing a Cartesian tree
+
 
 Leetcode:
 - Prioritize solving problems over theory.
