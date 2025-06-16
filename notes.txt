@@ -43,7 +43,7 @@ Big O Notation - Time/Space Complexity
 - Quick Sort
 - Merge Sort
   - O(N Log N)
-j- Min Heap
+- Min Heap
 - Tries
 - Maps
 - LRU Cache (Least Recently Used)
@@ -51,23 +51,21 @@ j- Min Heap
   - DFS: depth-first-search (recursion / Iterative DFS using Explicit Stack)
 - Queue
   - BFS: breadth-first-search
-- Singly-Linked Lists
 - Doubly-Linked Lists
+- Singly-Linked Lists
 - Trees
+  - Binary Search Tree
+    - Construct from unordered array
   - Tree traversal
     - pre-order
     - in-order
     - post-order
     - BFS traversal
   - Binary (Search) Tree comparison
-  - Binary Search Tree
-    - Construct from unordered array
-  - Constructing a Cartesian tree
 - Graphs
-  - Adjacency Matrix
   - Adjacency List
+  - Adjacency Matrix
   - Dijkstra's Shortest Path
-- HashMap
 - Ring Buffer
 
 
