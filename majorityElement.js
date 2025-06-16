@@ -3,21 +3,21 @@
  * @return {number}
  */
 var majorityElement = function (nums) {
-  const tally = nums.reduce((tally, num) => {
-    tally[num] = (tally[num] || 0) + 1;
-    return tally;
-  }, {});
+  let candidate = nums[0];
+  let count = 1;
 
-  let majorityElement;
-  for (const key in tally) {
-    const threshold = nums.length / 2;
-    const currTally = tally[key];
-    if (currTally > threshold) {
-      majorityElement = key;
+  for (let i = 1; i < nums.length; i++) {
+    if (count === 0) {
+      candidate = nums[i];
+      count = 1;
+    } else if (nums[i] === candidate) {
+      count++;
+    } else {
+      count--;
     }
   }
 
-  return Number(majorityElement);
+  return candidate;
 };
 
 let input = [3, 2, 3];
