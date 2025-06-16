@@ -9,14 +9,19 @@ var majorityElement = function (nums) {
   }, {});
 
   let majorityElement;
-  for (const num in tally) {
-    if (tally[num] > Object.keys(tally).length / 2) {
-      majorityElement = num;
+  for (const key in tally) {
+    const threshold = nums.length / 2;
+    const currTally = tally[key];
+    if (currTally > threshold) {
+      majorityElement = key;
     }
   }
 
   return Number(majorityElement);
 };
 
-const input = [3, 2, 3];
+let input = [3, 2, 3];
+console.log(majorityElement(input));
+
+input = [6, 6, 6, 7, 7];
 console.log(majorityElement(input));
