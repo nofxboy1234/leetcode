@@ -284,3 +284,4 @@ function factorial(n) {
 }
 
 console.log(factorial(3));
+console.log(factorial(18));
