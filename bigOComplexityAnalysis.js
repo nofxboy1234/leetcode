@@ -211,7 +211,7 @@ logAllPairs(fruits);
 'watermelon - watermelon'
 */
 
-// Time: O(2ⁿ) - Exponential
+// Time: O(2ⁿ) - Exponential, Space: O(n)
 function fibonacciRecursive(index) {
   // exit conditions, return if it is 0 or 1
   if (index === 0) return 0;
@@ -227,3 +227,25 @@ function fibonacciRecursive(index) {
 const result = fibonacciRecursive(4);
 console.log(result);
 // OUTPUT => 3
+
+// 1. ITERATIVE APPROACH - Most Practical
+// Time: O(n), Space: O(1)
+function fibonacciIterative(index) {
+  if (index === 0) return 0;
+  if (index === 1) return 1;
+
+  let prev2 = 0; // F(0)
+  let prev1 = 1; // F(1)
+  let current;
+
+  for (let i = 2; i <= index; i++) {
+    current = prev1 + prev2;
+    prev2 = prev1;
+    prev1 = current;
+  }
+
+  return current;
+}
+
+const result2 = fibonacciRecursive(4);
+console.log(result2);
