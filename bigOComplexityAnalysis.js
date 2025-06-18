@@ -247,5 +247,5 @@ function fibonacciIterative(index) {
   return current;
 }
 
-const result2 = fibonacciRecursive(4);
+const result2 = fibonacciIterative(4);
 console.log(result2);
