@@ -249,3 +249,24 @@ function fibonacciIterative(index) {
 
 const result2 = fibonacciIterative(4);
 console.log(result2);
+
+// Time: O(n!) - Factorial
+function getPermutations(arr) {
+  if (arr.length <= 2) {
+    if (arr.length === 2) return [arr, [arr[1], arr[0]]];
+    return arr;
+  }
+  return arr.reduce(
+    (acc, item, i) =>
+      acc.concat(
+        getPermutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map(
+          (val) => [item, ...val]
+        )
+      ),
+    []
+  );
+}
+
+const cities = ["Copenhagen", "Stockholm", "Oslo"];
+const result3 = getPermutations(cities);
+console.log(result3);
