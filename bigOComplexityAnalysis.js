@@ -285,3 +285,176 @@ function factorial(n) {
 
 console.log(factorial(3));
 console.log(factorial(18));
+
+// **************************************************************************
+// Analysis
+
+const productList = [
+  { name: "Laptop", price: 18487 },
+  { name: "Keyboard", price: 356 },
+  { name: "Monitor", price: 8345 },
+  // ...assuming 10000 more items here in between
+  { name: "Tablet", price: 9875 },
+];
+
+// -- Always assume the worst case --
+// Time: O(n)
+function lookupPrice(name, list) {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].name === name) {
+      console.log(`Price of '${list[i].name}' is: ${list[i].price}`);
+      break;
+    }
+  }
+}
+
+lookupPrice("Monitor", productList);
+// => OUTPUT: "Price of 'Monitor' is: 8345"
+
+// -- Each input should have a unique variable --
+// function recieves 2 different inputs, let's call them 'a' and 'b'
+function printLists(listOne, listTwo) {
+  // iterates through input 'listOne' -> O(a) Linear time
+  for (let i = 0; i < listOne.length; i++) {
+    console.log(listOne[i]);
+  }
+
+  // iterates through input 'listTwo' -> O(b) Linear time
+  for (let i = 0; i < listTwo.length; i++) {
+    console.log(listTwo[i]);
+  }
+}
+// End result for Big O => O(a + b)
+
+const numbers = [1, 2, 3, 4];
+const letters = ["a", "b"];
+printLists(numbers, letters);
+
+// nested loop with 2 different inputs
+
+// function recieves 2 different inputs, let's call them 'a' and 'b'
+function servingDrinks(drinkList, personsList) {
+  // iterates through input 'drinkList' -> O(a) Linear time
+  for (let i = 0; i < drinkList.length; i++) {
+    // iterates through input 'personsList' -> O(b) Linear time
+    for (let j = 0; j < personsList.length; j++) {
+      console.log(`Gives ${drinkList[i]} to ${personsList[j]}`);
+    }
+  }
+}
+
+const drinks = ["water", "coffee"];
+const persons = ["person 1", "person 2", "person 3", "person 4"];
+servingDrinks(drinks, persons);
+
+// End result for Big O => O (a * b)
+// 2 x 4 = 8 iterations
+
+/*
+OUTPUT:
+'Gives water to person 1'
+'Gives water to person 2'
+'Gives water to person 3'
+'Gives water to person 4'
+'Gives coffee to person 1'
+'Gives coffee to person 2'
+'Gives coffee to person 3'
+'Gives coffee to person 4'
+*/
+
+// -- Drop the constants --
+// function recieves a single input
+function printFirstHalf(list) {
+  // iterates through list -> O(n) Linear time
+  for (let i = 0; i < list.length / 2; i++) {
+    console.log(list[i]);
+  }
+}
+
+const numbers2 = [1, 2, 3, 4, 5, 6];
+printFirstHalf(numbers2);
+// Big O total => O (n / 2) => O(n)
+
+/* 
+OUTPUT:
+1
+2
+3
+*/
+
+//
+
+// function recieves a single input
+function printTwiceForNoReason(list) {
+  // iterates through list -> O(n) Linear time
+  for (let i = 0; i < list.length; i++) {
+    console.log(list[i]);
+  }
+  // iterates through the same list again -> O(n) Linear time
+  for (let j = 0; j < list.length; j++) {
+    console.log(list[j]);
+  }
+}
+
+const numbers3 = [1, 2, 3];
+printTwiceForNoReason(numbers3);
+
+// Big O total => O (n + n) => O(2n) => O(n)
+
+/*
+OUTPUT:
+1
+2
+3
+1
+2
+3
+*/
+
+// -- Drop non-dominant terms --
+
+// function recieves a single input
+function printAndPair(arr) {
+  // iterates through list -> O(n) Linear time
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+
+  // declares variable -> O(1) Constant time
+  const totalPairs = arr.length * arr.length;
+  // prints given value -> O(1) Constant time
+  console.log("Estimated paired elements length:", totalPairs);
+
+  // nested loop using the same array -> O(n ^ 2) Quadratic time
+  for (let j = 0; j < arr.length; j++) {
+    for (let k = 0; k < arr.length; k++) {
+      console.log(`${arr[j]} - ${arr[k]}`);
+    }
+  }
+}
+
+const fruits2 = ["apple", "strawberry", "watermelon"];
+printAndPair(fruits2);
+
+// Big O total => O(n) + O(1) + O(1) + O(n ^ 2)
+//                O(n) + O(2)        + O(n ^ 2)
+//                O(n)               + O(n ^ 2)
+//                                     O(n ^ 2)
+/*
+OUTPUT:
+'apple'
+'strawberry'
+'watermelon'
+
+'Estimated paired elements length:' 9
+
+'apple - apple'
+'apple - strawberry'
+'apple - watermelon'
+'strawberry - apple'
+'strawberry - strawberry'
+'strawberry - watermelon'
+'watermelon - apple'
+'watermelon - strawberry'
+'watermelon - watermelon'
+*/
