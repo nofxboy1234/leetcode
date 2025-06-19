@@ -17,8 +17,8 @@ var singleNumber = function (nums) {
   // Step 3: Divide numbers into two groups based on this bit
   // Group 1: numbers with this bit set to 1
   // Group 2: numbers with this bit set to 0
-  let num1 = 0,
-    num2 = 0;
+  let num1 = 0;
+  let num2 = 0;
 
   for (const num of nums) {
     if (num & rightmostBit) {
