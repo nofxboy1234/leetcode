@@ -399,7 +399,7 @@ function printTwiceForNoReason(list) {
 const numbers3 = [1, 2, 3];
 printTwiceForNoReason(numbers3);
 
-// Big O total => O (n + n) => O(2n) => O(n)
+// Big O total => O(n + n) => O(2n) => O(n)
 
 /*
 OUTPUT:
@@ -458,3 +458,66 @@ OUTPUT:
 'watermelon - strawberry'
 'watermelon - watermelon'
 */
+
+// -- Analyzing space complexity --
+
+{
+  function getTotal(arr) {
+    // Declares variable - let total -> O(1)
+    let total = 0;
+    // Declares variable - let i -> O(1)
+    for (let i = 0; i < arr.length; i++) {
+      total += arr[i];
+    }
+    return total;
+  }
+
+  // Big O space complexity => O(1) + O(1) => O(2) = O(1) Constant
+  const numbers = [1, 2, 3, 4, 5, 6];
+  console.log(getTotal(numbers)); // OUTPUT => 21
+}
+
+{
+  function bookTables(list) {
+    // Declares variable - let tables -> O(1)
+    let tables = [];
+    // Declares variable - let i -> O(1)
+    for (let i = 0; i < list.length; i++) {
+      // Pushes values based on the list length - O(n)
+      tables.push(`Table ${i + 1} is reserved for ${list[i]}`);
+    }
+    return tables;
+  }
+
+  // Big O total => O(1) + O(1) + O(n)
+  // Big O space complexity after dropping constants => O(n) Linear
+  const guests = ["John", "Jane", "Adam", "Olivia", "Alan", "Amy", "Joe"];
+  const bookedList = bookTables(guests);
+  console.log(bookedList);
+
+  /* OUTPUT:
+[
+  'Table 1 is reserved for John',
+  'Table 2 is reserved for Jane',
+  'Table 3 is reserved for Adam',
+  'Table 4 is reserved for Olivia',
+  'Table 5 is reserved for Alan',
+  'Table 6 is reserved for Amy',
+  'Table 7 is reserved for Joe'
+]
+*/
+}
+
+{
+  // Time: O(2ⁿ) - Exponential, Space: O(n)
+  function fibonacciRecursive(num) {
+    // exit conditions, return if it is 0 or 1
+    if (num === 0) return 0;
+    else if (num === 1) return 1;
+    // else, call the function recursively
+    else return fibonacciRecursive(num - 1) + fibonacciRecursive(num - 2);
+  }
+
+  console.log(fibonacciRecursive(4));
+  // OUTPUT => 3
+}
