@@ -576,21 +576,32 @@ OUTPUT:
 
 {
   const twoSumUsingTwoPointers = (sortedNums, target) => {
+    // Time: O(1), Space: O(1)
     let left = 0;
+    // Time: O(1), Space: O(1)
     let right = sortedNums.length - 1;
 
+    // Time: O(n)
     while (left < right) {
+      // Time: O(1), Space: O(1)
       let sum = sortedNums[left] + sortedNums[right];
 
+      // Time: O(1)
       if (sum === target) {
+        // Time: O(1), Space: O(1)
         return [left, right];
+        // Time: O(1)
       } else if (sum < target) {
+        // Time: O(1)
         left++;
       } else {
+        // Time: O(1)
         right--;
       }
     }
   };
+  // Total Time: O(n) + O(9) => O(n)
+  // Total Space: O(4) => O(1)
 
   const sortedNrs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   console.log(twoSumUsingTwoPointers(sortedNrs, 7));
