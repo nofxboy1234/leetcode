@@ -43,12 +43,6 @@ console.log("Group 1 (bit 1 = 1): 2, 3, 2 → 2^3^2 = 3");
 console.log("Group 2 (bit 1 = 0): 1, 1, 5 → 1^1^5 = 5");
 console.log("Result: [3, 5]");
 
-// Test cases
-console.log("\n=== Test Cases ===");
-console.log(singleNumber([1, 2, 1, 3, 2, 5])); // [3,5] or [5,3]
-console.log(singleNumber([-1, 0])); // [-1,0] or [0,-1]
-console.log(singleNumber([0, 1])); // [1,0] or [0,1]
-
 // Bit manipulation explanation
 console.log("\n=== Bit Manipulation Key ===");
 console.log("XOR properties:");
@@ -59,3 +53,9 @@ console.log("\nRightmost set bit trick:");
 console.log("- x & (-x) isolates the rightmost 1 bit");
 console.log("- Example: 6 = 110, -6 = ...11111010");
 console.log("- 6 & (-6) = 110 & ...11111010 = 010 = 2");
+
+// Test cases
+console.log("\n=== Test Cases ===");
+console.log(singleNumber([1, 2, 1, 3, 2, 5])); // [3,5] or [5,3]
+console.log(singleNumber([-1, 0])); // [-1,0] or [0,-1]
+console.log(singleNumber([0, 1])); // [1,0] or [0,1]
