@@ -5,22 +5,24 @@
 var longestConsecutive = function (nums) {
   if (nums.length === 0) return 0;
 
-  const unique = new Set(nums);
-  let maxCount = 1;
+  const numSet = new Set(nums);
+  let maxLength = 0;
 
-  unique.forEach((value) => {
-    if (!unique.has(value - 1)) {
-      let current = value;
-      let count = 1;
+  for (const num of numSet) {
+    // Only start counting if this is the beginning of a sequence
+    if (numSet.has(num - 1)) continue;
 
-      while (unique.has(current + 1)) {
-        count++;
-        current++;
-      }
+    let currentNum = num;
+    let currentLength = 1;
 
-      maxCount = Math.max(count, maxCount);
+    // Count consecutive numbers
+    while (numSet.has(currentNum + 1)) {
+      currentNum++;
+      currentLength++;
     }
-  });
 
-  return maxCount;
+    maxLength = Math.max(maxLength, currentLength);
+  }
+
+  return maxLength;
 };
