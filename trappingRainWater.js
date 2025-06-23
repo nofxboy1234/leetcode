@@ -2,7 +2,7 @@
  * @param {number[]} height
  * @return {number}
  */
-var trap = function (height) {
+var trap2 = function (height) {
   if (height.length === 1) return 0;
 
   let left = 0;
@@ -34,6 +34,63 @@ var trap = function (height) {
     } else {
       right++;
     }
+  }
+
+  return waterBlocks;
+};
+
+var trap = function (height) {
+  if (height.length === 1) return 0;
+
+  const maxHeight = Math.max(...height);
+  const maxIndex = height.findIndex(
+    (currentHeight) => currentHeight === maxHeight
+  );
+
+  let waterBlocks = 0;
+
+  let currentHeight = height[maxIndex];
+
+  while (currentHeight >= 1) {
+    let left = maxIndex;
+    let right = maxIndex;
+
+    while (right < height.length) {
+      if (height[right] >= currentHeight) {
+        while (right - left > 1) {
+          left++;
+          waterBlocks += 1;
+        }
+
+        left = right;
+        right++;
+      } else {
+        right++;
+      }
+    }
+    currentHeight--;
+  }
+
+  currentHeight = height[maxIndex];
+
+  while (currentHeight >= 1) {
+    let left = maxIndex;
+    let right = maxIndex;
+
+    while (left >= 0) {
+      if (height[left] >= currentHeight) {
+        while (right - left > 1) {
+          right--;
+          waterBlocks += 1;
+        }
+
+        right = left;
+        left--;
+      } else {
+        left--;
+      }
+    }
+    currentHeight--;
   }
 
   return waterBlocks;
