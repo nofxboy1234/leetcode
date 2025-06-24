@@ -1,87 +1,66 @@
 /**
+ * Trap rainwater using two-pointer approach
+ * Time Complexity: O(n) - single pass through the array
+ * Space Complexity: O(1) - only using constant extra space
+ *
  * @param {number[]} height
  * @return {number}
  */
 var trap = function (height) {
-  if (height.length === 1) return 0;
+  if (height.length <= 2) return 0;
 
   let left = 0;
-  let right = 1;
+  let right = height.length - 1;
+  let leftMax = 0;
+  let rightMax = 0;
+  let waterTrapped = 0;
 
-  let waterBlocks = 0;
-
-  while (left >= 0 && left < height.length - 1) {
-    if (right === left) {
-      break;
-    }
-
-    if (height[right] >= height[left]) {
-      // hit a wall
-      // calculate max water depth between left and right
-      const maxWaterDepth = Math.min(height[left], height[right]);
-      // move left pointer to right pointer and get depth at each index along the way
-      if (maxWaterDepth === 0) {
-        left = right;
+  while (left < right) {
+    if (height[left] < height[right]) {
+      // Process left side
+      if (height[left] >= leftMax) {
+        leftMax = height[left];
+      } else {
+        // Water can be trapped here
+        waterTrapped += leftMax - height[left];
       }
-
-      while (left < right) {
-        const currentWaterDepth = maxWaterDepth - height[left];
-        waterBlocks += currentWaterDepth;
-        left++;
-      }
-
-      right++;
-    } else if (right === height.length - 1) {
-      // reached the end
-      // save left's position to come back to
-      const originalLeftIndex = left;
-      // go right to left
-      left = right - 1;
-
-      while (right != left) {
-        if (height[left] >= height[right]) {
-          // hit a wall
-          // calculate max water depth between right and left
-          const maxWaterDepth = Math.min(height[right], height[left]);
-          // move right pointer to left pointer and get depth at each index along the way
-          if (maxWaterDepth === 0) {
-            right = left;
-          }
-
-          while (right > left) {
-            const currentWaterDepth = maxWaterDepth - height[right];
-            waterBlocks += currentWaterDepth;
-            right--;
-          }
-
-          if (left === originalLeftIndex) {
-            // finished counting water from right to left
-            break;
-          }
-
-          left--;
-        } else {
-          // keep searching for a wall hit
-          left--;
-        }
-      }
+      left++;
     } else {
-      // keep searching for a wall hit
-      right++;
+      // Process right side
+      if (height[right] >= rightMax) {
+        rightMax = height[right];
+      } else {
+        // Water can be trapped here
+        waterTrapped += rightMax - height[right];
+      }
+      right--;
     }
   }
 
-  return waterBlocks;
+  return waterTrapped;
 };
 
-{
-  const height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
-  const result = trap(height);
-  console.log(result);
-}
+// Test cases
+console.log("Test 1:");
+const height1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
+const result1 = trap(height1);
+console.log(`Input: [${height1.join(", ")}]`);
+console.log(`Output: ${result1}`); // Expected: 6
 
-{
-  const height = [4, 2, 3];
-  const result = trap(height);
-  console.log(result);
-}
+console.log("\nTest 2:");
+const height2 = [4, 2, 3];
+const result2 = trap(height2);
+console.log(`Input: [${height2.join(", ")}]`);
+console.log(`Output: ${result2}`); // Expected: 1
+
+console.log("\nTest 3:");
+const height3 = [3, 0, 2, 0, 4];
+const result3 = trap(height3);
+console.log(`Input: [${height3.join(", ")}]`);
+console.log(`Output: ${result3}`); // Expected: 7
+
+console.log("\nTest 4 (Edge case):");
+const height4 = [2, 1];
+const result4 = trap(height4);
+console.log(`Input: [${height4.join(", ")}]`);
+console.log(`Output: ${result4}`); // Expected: 0
