@@ -10,13 +10,9 @@ var trap = function (height) {
 
   let waterBlocks = 0;
 
-  while (
-    left >= 0 &&
-    left < height.length - 3 &&
-    right >= 1 &&
-    right < height.length
-  ) {
+  while (left >= 0 && left < height.length - 1) {
     if (height[right] >= height[left]) {
+      // hit a wall
       // calculate max water depth between left and right
       const maxWaterDepth = Math.min(height[left], height[right]);
       // move left pointer to right pointer and get depth at each index along the way
@@ -31,7 +27,13 @@ var trap = function (height) {
       }
 
       right++;
+    } else if (right === height.length - 1) {
+      // reached the end
+      // go down 1 step
+      left++;
+      right = left + 1;
     } else {
+      // keep searching for a wall hit
       right++;
     }
   }
